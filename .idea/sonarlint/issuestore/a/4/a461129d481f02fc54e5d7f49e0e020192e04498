@@ -1,0 +1,11 @@
+
+}
+java:S1128	"`Remove this unused import 'org.springframework.boot.autoconfigure.web.servlet.WebMvcProperties'.(¬ÝŽµ8ÍÙœô§.
+€
+java:S1128"^Remove this unused import 'org.springframework.boot.autoconfigure.http.HttpMessageConverters'.(û”Üçúÿÿÿÿ8ÍÙœô§.
+„
+java:S1128"gRemove this unused import 'org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration'.(›ã×‘8ÍÙœô§.
+t
+java:S1128"RRemove this unused import 'org.springframework.beans.factory.ListableBeanFactory'.(¢ÏªÒþÿÿÿÿ8ÍÙœô§.
+o
+java:S1128"MRemove this unused import 'org.springframework.beans.factory.ObjectProvider'.(ùÚÕ£ùÿÿÿÿ8ÍÙœô§.

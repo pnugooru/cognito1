@@ -1,0 +1,154 @@
+
+M
+java:S1128"0Remove this unused import 'java.io.InputStream'.(¹»º8ê²—ò§.
+U
+java:S2589½"7Remove this expression which always evaluates to "true"(¼éÄû8ñ»¸ò§.
+e
+java:S1192È"GDefine a constant instead of duplicating this literal "Accept" 7 times.(ñ¤–ø8ñ»¸ò§.
+V	java:S106É"9Replace this use of System.out or System.err by a logger.(×Ş‹ô8ÖŠò§.
+[	java:S106¤"9Replace this use of System.out or System.err by a logger.(ÙôÁ°üÿÿÿÿ8ñ»¸ò§.
+Y	java:S125"<This block of commented-out lines of code should be removed.(êÕâÁ8ñ»¸ò§.
+e
+java:S1192r"HDefine a constant instead of duplicating this literal "Session" 3 times.(àØĞì8ñ»¸ò§.
+j
+java:S1144ü"GRemove this unused private "sendGetCognitoPoolPublicKeyRequest" method.(ÚÉªŸüÿÿÿÿ8ñ»¸ò§.
+K
+java:S1125}")Remove the literal "false" boolean value.(å²šáüÿÿÿÿ8ñ»¸ò§.
+R
+java:S1128"0Remove this unused import 'java.io.IOException'.(ªº»Úıÿÿÿÿ8ˆÏªò§.
+u
+java:S3776Õ"RRefactor this method to reduce its Cognitive Complexity from 19 to the 15 allowed.(ëßåîüÿÿÿÿ8ñ»¸ò§.
+U
+java:S2589—"7Remove this expression which always evaluates to "true"(¼éÄû8ñ»¸ò§.
+[	java:S106È"9Replace this use of System.out or System.err by a logger.(¯Š•™øÿÿÿÿ8™—íğ§.
+^	java:S125®"<This block of commented-out lines of code should be removed.(Îššûÿÿÿÿ8ñ»¸ò§.
+U	java:S106t"9Replace this use of System.out or System.err by a logger.(æ®“¬8ÖŠò§.
+[	java:S106‚"9Replace this use of System.out or System.err by a logger.(ŞÒ—üÿÿÿÿ8™—íğ§.
+V	java:S106‹"9Replace this use of System.out or System.err by a logger.(á÷­ß8ñ»¸ò§.
+h	java:S112Ö"FDefine and throw a dedicated exception instead of using a generic one.(ä•¹üÿÿÿÿ8ñ»¸ò§.
+V	java:S106„"9Replace this use of System.out or System.err by a logger.(ÆÀûı8ÖŠò§.
+h	java:S112ü"FDefine and throw a dedicated exception instead of using a generic one.(ÚÉªŸüÿÿÿÿ8ñ»¸ò§.
+[	java:S106»"9Replace this use of System.out or System.err by a logger.(·à¾Şÿÿÿÿÿ8™—íğ§.
+r	java:S116#"VRename this field "cognito_url" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¤µªÇ8ÿˆò§.
+F
+java:S1148Ï"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ñ»¸ò§.
+[	java:S106º"9Replace this use of System.out or System.err by a logger.(›ù—×ÿÿÿÿÿ8™—íğ§.
+[	java:S106¾"9Replace this use of System.out or System.err by a logger.(–ÿÜ–ûÿÿÿÿ8ÖŠò§.
+[	java:S106ğ"9Replace this use of System.out or System.err by a logger.(óÿ©ëşÿÿÿÿ8ñ»¸ò§.
+V	java:S106‡"9Replace this use of System.out or System.err by a logger.(¨û„«8ÖŠò§.
+L
+java:S1125¬")Remove the literal "false" boolean value.(ã¾ËÖıÿÿÿÿ8ñ»¸ò§.
+c	java:S112Â"FDefine and throw a dedicated exception instead of using a generic one.(«åóÂ8ñ»¸ò§.
+^	java:S125Š"<This block of commented-out lines of code should be removed.(ˆ¬åøÿÿÿÿ8ñ»¸ò§.
+^	java:S125Å"<This block of commented-out lines of code should be removed.(šÅÇöûÿÿÿÿ8ñ»¸ò§.
+[	java:S106†"9Replace this use of System.out or System.err by a logger.(ŞÒ—üÿÿÿÿ8ñ»¸ò§.
+[	java:S106ƒ"9Replace this use of System.out or System.err by a logger.(¿ªìïøÿÿÿÿ8™—íğ§.
+[	java:S106"9Replace this use of System.out or System.err by a logger.(È²¦Êşÿÿÿÿ8ñ»¸ò§.
+V	java:S106½"9Replace this use of System.out or System.err by a logger.(¯…€ü8™—íğ§.
+s
+java:S1192æ"PDefine a constant instead of duplicating this literal "\"Session\": \"" 3 times.(­ãÍîùÿÿÿÿ8ñ»¸ò§.
+U
+java:S2589ò"7Remove this expression which always evaluates to "true"(¼éÄû8ñ»¸ò§.
+V	java:S106¼"9Replace this use of System.out or System.err by a logger.(ù¸ìë8™—íğ§.
+p
+java:S3776¤"RRefactor this method to reduce its Cognitive Complexity from 32 to the 15 allowed.(æØ³İ8ñ»¸ò§.
+L
+java:S1125„")Remove the literal "false" boolean value.(ã¾ËÖıÿÿÿÿ8ñ»¸ò§.
+Y	java:S125İ"<This block of commented-out lines of code should be removed.(·éş§8ñ»¸ò§.
+[	java:S106Ã"9Replace this use of System.out or System.err by a logger.(¸âßÊùÿÿÿÿ8ñ»¸ò§.
+Y	java:S125Ä"<This block of commented-out lines of code should be removed.(Ã’µÏ8ñ»¸ò§.
+^	java:S125é"<This block of commented-out lines of code should be removed.(Í¤È„ûÿÿÿÿ8ñ»¸ò§.
+[	java:S106„"9Replace this use of System.out or System.err by a logger.(¯Š•™øÿÿÿÿ8™—íğ§.
+[	java:S106¦"9Replace this use of System.out or System.err by a logger.(¤¨œ úÿÿÿÿ8ÖŠò§.
+[	java:S106À"9Replace this use of System.out or System.err by a logger.(é°ÔÚÿÿÿÿÿ8ñ»¸ò§.
+u
+java:S3776ø"RRefactor this method to reduce its Cognitive Complexity from 19 to the 15 allowed.(ËŸ÷½ùÿÿÿÿ8ñ»¸ò§.
+^	java:S125ì"<This block of commented-out lines of code should be removed.(ëÙ˜¥ùÿÿÿÿ8ñ»¸ò§.
+r
+java:S1192½"UDefine a constant instead of duplicating this literal "AuthenticationResult" 3 times.(–Ìçw8ñ»¸ò§.
+F
+java:S1125¼")Remove the literal "false" boolean value.(Õ‡8ñ»¸ò§.
+[	java:S106¥"9Replace this use of System.out or System.err by a logger.(¯Š•™øÿÿÿÿ8™—íğ§.
+Y	java:S125ˆ"<This block of commented-out lines of code should be removed.(ªğÏ8ÖŠò§.
+X	java:S125º"<This block of commented-out lines of code should be removed.(ºÒ”e8ñ»¸ò§.
+[	java:S106»"9Replace this use of System.out or System.err by a logger.(óÿ©ëşÿÿÿÿ8ñ»¸ò§.
+F
+java:S1148¤"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ñ»¸ò§.
+[	java:S106Ç"9Replace this use of System.out or System.err by a logger.( €Øêúÿÿÿÿ8ñ»¸ò§.
+F
+java:S1148ó"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ñ»¸ò§.
+P
+java:S1199Ÿ"-Extract this nested code block into a method.(ÒÌâ–øÿÿÿÿ8ñ»¸ò§.
+L
+java:S1125á")Remove the literal "false" boolean value.(ã¾ËÖıÿÿÿÿ8ñ»¸ò§.
+X	java:S125w"<This block of commented-out lines of code should be removed.(˜ù¯ñ8ñ»¸ò§.
+^	java:S125°"<This block of commented-out lines of code should be removed.(¡ºß·ıÿÿÿÿ8ñ»¸ò§.
+Z	java:S106s"9Replace this use of System.out or System.err by a logger.(¯¸â—øÿÿÿÿ8ñ»¸ò§.
+Y	java:S125ƒ"<This block of commented-out lines of code should be removed.(·éş§8ñ»¸ò§.
+K
+java:S1125p")Remove the literal "false" boolean value.(ã¾ËÖıÿÿÿÿ8ñ»¸ò§.
+Y	java:S125«"<This block of commented-out lines of code should be removed.(˜¶»Ä8ñ»¸ò§.
+o
+java:S1192È"QDefine a constant instead of duplicating this literal "application/json" 9 times.(ñ¤–ø8£²‘ò§.
+F
+java:S1148Ÿ"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ñ»¸ò§.
+Z	java:S106v"9Replace this use of System.out or System.err by a logger.(Õéø¨şÿÿÿÿ8ñ»¸ò§.
+Z	java:S106l"9Replace this use of System.out or System.err by a logger.(óã«‚ûÿÿÿÿ8ñ»¸ò§.
+b	java:S112İ"FDefine and throw a dedicated exception instead of using a generic one.(±©ãF8ñ»¸ò§.
+Z	java:S106y"9Replace this use of System.out or System.err by a logger.(š€µÒúÿÿÿÿ8ñ»¸ò§.
+t	java:S116!"XRename this field "app_client_id" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(©°…†8ÿˆò§.
+[	java:S106˜"9Replace this use of System.out or System.err by a logger.(ƒ€¼Åüÿÿÿÿ8ñ»¸ò§.
+V	java:S106Î"9Replace this use of System.out or System.err by a logger.(²ıªù8ñ»¸ò§.
+[	java:S106ƒ"9Replace this use of System.out or System.err by a logger.(ûØÜ®şÿÿÿÿ8ñ»¸ò§.
+[	java:S106"9Replace this use of System.out or System.err by a logger.(ŞÒ—üÿÿÿÿ8ñ»¸ò§.
+[	java:S106Å"9Replace this use of System.out or System.err by a logger.(ŞÒ—üÿÿÿÿ8ñ»¸ò§.
+h	java:S112“"FDefine and throw a dedicated exception instead of using a generic one.(à¢ÿƒüÿÿÿÿ8ñ»¸ò§.
+›
+java:S1192Ğ"}Define a constant instead of duplicating this literal " ---------------------------------------------------------- " 3 times.(×Ş‹ô8ñ»¸ò§.
+^	java:S125 "<This block of commented-out lines of code should be removed.(Ğâ²éÿÿÿÿÿ8ñ»¸ò§.
+p
+java:S1192Ç"MDefine a constant instead of duplicating this literal "X-Amz-Target" 5 times.(ã¶Ëàøÿÿÿÿ8™—íğ§.
+V	java:S106Ğ"9Replace this use of System.out or System.err by a logger.(×Ş‹ô8ÖŠò§.
+V	java:S106ê"9Replace this use of System.out or System.err by a logger.(×Ş‹ô8ÖŠò§.
+[	java:S106š"9Replace this use of System.out or System.err by a logger.(•ô¤Øûÿÿÿÿ8ñ»¸ò§.
+p
+java:S1192Æ"MDefine a constant instead of duplicating this literal "Content-Type" 7 times.(û®¾Áøÿÿÿÿ8ñ»¸ò§.
+[	java:S106ê"9Replace this use of System.out or System.err by a logger.(ŞÒ—üÿÿÿÿ8ñ»¸ò§.
+[	java:S106é"9Replace this use of System.out or System.err by a logger.(¯Š•™øÿÿÿÿ8™—íğ§.
+V	java:S106µ"9Replace this use of System.out or System.err by a logger.(—¥Œ°8ñ»¸ò§.
+G
+java:S1125")Remove the literal "false" boolean value.(¶ª”Ş8ñ»¸ò§.
+[	java:S106è"9Replace this use of System.out or System.err by a logger.(êè³¾úÿÿÿÿ8ñ»¸ò§.
+V	java:S106’"9Replace this use of System.out or System.err by a logger.(®¯×Ñ8ñ»¸ò§.
+V	java:S106õ"9Replace this use of System.out or System.err by a logger.(ß€¶8ñ»¸ò§.
+[	java:S106¸"9Replace this use of System.out or System.err by a logger.(ª±¸ÿÿÿÿÿ8ñ»¸ò§.
+o
+java:S1192Ë"QDefine a constant instead of duplicating this literal "\"ClientId\": \"" 3 times.(Ûœâ³8ñ»¸ò§.
+F
+java:S1148–"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ñ»¸ò§.
+[	java:S106Ï"9Replace this use of System.out or System.err by a logger.(¯Š•™øÿÿÿÿ8™—íğ§.
+^	java:S125¶"<This block of commented-out lines of code should be removed.(óàÚåüÿÿÿÿ8ñ»¸ò§.
+^	java:S125·"<This block of commented-out lines of code should be removed.(ëÙ˜¥ùÿÿÿÿ8ñ»¸ò§.
+V	java:S106è"9Replace this use of System.out or System.err by a logger.(æÃêÚ8ñ»¸ò§.
+[	java:S106•"9Replace this use of System.out or System.err by a logger.(óÿ©ëşÿÿÿÿ8ñ»¸ò§.
+h	java:S112÷"FDefine and throw a dedicated exception instead of using a generic one.(âãë€ÿÿÿÿÿ8ñ»¸ò§.
+c	java:S112¡"FDefine and throw a dedicated exception instead of using a generic one.(Ú­Åã8ñ»¸ò§.
+Y	java:S125¨"<This block of commented-out lines of code should be removed.(·éş§8ñ»¸ò§.
+h	java:S112´"FDefine and throw a dedicated exception instead of using a generic one.(Ä§½¯ıÿÿÿÿ8ñ»¸ò§.
+Y	java:S125"<This block of commented-out lines of code should be removed.(˜¶»Ä8ñ»¸ò§.
+^	java:S125Œ"<This block of commented-out lines of code should be removed.(Œêı‹ÿÿÿÿÿ8ñ»¸ò§.
+^	java:S125‘"<This block of commented-out lines of code should be removed.(ëÙ˜¥ùÿÿÿÿ8ñ»¸ò§.
+P
+java:S1199¬"-Extract this nested code block into a method.(ÒÌâ–øÿÿÿÿ8ñ»¸ò§.
+t
+java:S3776h"RRefactor this method to reduce its Cognitive Complexity from 21 to the 15 allowed.(í›äùüÿÿÿÿ8ñ»¸ò§.
+n	java:S117Š"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(êãÆß8ñ»¸ò§.
+Y	java:S125¦"<This block of commented-out lines of code should be removed.(êÕâÁ8ñ»¸ò§.
+F
+java:S1148±"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ñ»¸ò§.
+[	java:S106…"9Replace this use of System.out or System.err by a logger.(¤¨œ úÿÿÿÿ8ÖŠò§.
+[	java:S106¨"9Replace this use of System.out or System.err by a logger.(óã«‚ûÿÿÿÿ8ñ»¸ò§.
+[	java:S106¹"9Replace this use of System.out or System.err by a logger.(ÕÊš½úÿÿÿÿ8™—íğ§.
+~
+java:S1192Æ"[Define a constant instead of duplicating this literal "application/x-amz-json-1.1" 5 times.(û®¾Áøÿÿÿÿ8ñ»¸ò§.
+U	java:S106Œ"9Replace this use of System.out or System.err by a logger.(ùİê=8ñ»¸ò§.
