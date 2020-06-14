@@ -82,44 +82,66 @@ body {
 <div class="row" style="margin-top:1%">
 <div class="col-3"></div>
 <div class="col-6">
-   <form action="/register" method="post">
+  
         <h4 class="text-center">Set Up MFA for User [ONE TIME PROCESS]</h4>       
         <div class="form-group">
 		 <label >Secret Code</label>
-            <input type="text"  name="tc_secret_code" class="form-control" value="" placeholder="Secret Code" ng-model="secretCode" required="required" readonly>
-            <span>{{secretError}}</span>
-			<div style="float:right"><a href="#" ng-click="$event.preventDefault();secretCodeF()">Generate Secret Code</a></div>
+            <input type="text"  name="tc_secret_code" id="scCode"  class="form-control" value="" placeholder="Secret Code" ng-model="secretCode"  readonly>
+            <span style="color:red">{{secretError}}</span>
+			<div style="float:right"> <a href="#" ng-click="$event.preventDefault();secretCodeF()">Generate Secret Code</a><button id="copyButton" style="margin-left: 10px;display:none"   class=" btn-sm btn btn-primary" onclick="myFunction()">Secret Code</button></div>
         </div>
-		
-		 <div class="form-group">
-		 <label >Enter MFAÂ  Token</label>
-            <input type="text" name="mfa_token" class="form-control" minlength="10" placeholder="Enter MFAÂ  Token" ng-model="mfaToken" required="required">
-             <span>{{refreshError}}</span>
-<div style="float:right">
-<a href="#" ng-click="$event.preventDefault();refreshTokenF()">Submit to get Refresh Token</a>
-</div>    
-	   </div>
-		
-        <div class="form-group">
-		<label >Refresh Token</label>
-		<input type="text" name="tc_refresh_token" class="form-control" placeholder="Refresh Token" ng-model="refreshToken" required="required" readonly>
-           
-        </div>
-		
-		 
-        
-       <div class="form-group">
-            <button type="submit" ng-click="refreshTokenF()" style="float: right" class="btn btn-primary ">Submit</button>
-			<a href="/logout" style="float: left;margin-top:1%">Cancel</a>
-        </div>
-       <span>{{message}}</span>
-    </form>
+       
+      
+   
 	<div class="col-3"></div>
 	</div>
 </div>
+
+
+<div class="row" style="margin-top:1%;"  >
+<div class="col-3"></div>
+<div class="col-6">
+ <form   id="tokenForm"  style="display:none">
+          <div class="form-group">
+		 <label >Enter MFAA  Token</label>
+            <input type="text" name="mfa_token" id="token" class="form-control" placeholder="Enter MFAA  Token" ng-model="mfaToken" required="required">
+            
+ 
+	   </div>
+	   
+	   <div class="form-group">
+       <div style="margin-top:6%">
+            <button type="submit" ng-click="refreshTokenF1()" style="float: right" class="btn btn-primary ">Submit</button>
+			<a href="/logout" style="float: left;margin-top:1%">Cancel</a>
+			</div>
+        </div>
+	   </form>
+        
+       
+      
+   
+	
+	</div>
+	<div class="col-3"></div>
+</div>
+<div style="text-align: center;width:100%">
+ <span style="color:green">{{message}}</span>
+ </div>
     </div>
 </div>
 <script>
+
+
+function myFunction() {
+	  var copyText = document.getElementById("scCode").value;
+	  if(copyText){
+  		  copyText.select();
+  	  	  copyText.setSelectionRange(0, 99999)
+  	  	  document.execCommand("copy");
+  	  	  alert("Copied the text: " + copyText.value);
+  	  }
+	}
+	
 function openNav() {
   document.getElementById("mySidenav").style.width = "250px";
   document.getElementById("main").style.marginLeft = "235px";
@@ -132,18 +154,17 @@ function closeNav() {
   document.body.style.backgroundColor = "white";
 }
 </script>
-   
-</body>
+
 
 <script>
+
     function choiceController($scope, $http){
-        console.log("choice");
         $scope.secretCodeF = secretCodeF;
-        $scope.refreshTokenF = refreshTokenF;
+        $scope.refreshTokenF1 = refreshTokenF1;
+       
 
         function secretCodeF() {
             $scope.secretCode = '';
-            $scope.refreshError='';
             $scope.secretError='';
             $scope.resp='';
                 var url = "/process-choice";
@@ -151,40 +172,56 @@ function closeNav() {
                                 id : 1,
                                 mfaToken : $scope.mfaToken
                             };
-                $http.post(url, objData).success(function(response) {
+             var sccodeold=  document.getElementById("scCode").value;
+                if(!sccodeold){ $http.post(url, objData).success(function(response) {
 			        $scope.data = response;
-			        if($scope.data.secretCode == ''){
+			        console.log(response);
+			        
+			        if($scope.data.secretCode == null){
 			            $scope.secretError=$scope.data.message;
+			            
 			        } else {
 			            $scope.secretCode=$scope.data.secretCode;
 			            $scope.message="Request submitted successfully";
+			            document.getElementById("copyButton").style.display = "block";
+				        document.getElementById("tokenForm").style.display = "block";
+				        $scope.message="";
 			        }
-		        });
+		        });}
+                
+               
         }
-
-        function refreshTokenF() {
-            $scope.refreshToken = '';
-            $scope.refreshError='';
+        
+       
+        function refreshTokenF1() {
+        	
             $scope.secretError='';
             $scope.resp='';
-                var url = "/process-choice";
+                var url = "/submitMfa";
                 var objData = {
                                 id : 2,
                                 mfaToken : $scope.mfaToken,
                                 secretCode : $scope.secretCode
                             };
-                $http.post(url, objData).success(function(response) {
-			        $scope.data = response;
-			        if($scope.data.refreshToken == ''){
-			            $scope.refreshError=$scope.data.message;
-			        } else {
-			            $scope.refreshToken=$scope.data.refreshToken;
-			            $scope.message="Request submitted successfully";
-			        }
-		        });
+                var token=  document.getElementById("token").value;
+               
+                if(token){
+                	$http.post(url, objData).success(function(response) {
+                	
+    			        $scope.data = response;
+    			        $scope.message=$scope.data.message;
+    			       
+    		        });
+                }
+                
+                
         }
 
     }
 
 </script>
+   
+</body>
+
+
 </html> 

@@ -13,4 +13,8 @@ public interface CognitoService {
     Object processChoice(CognitoVO vo);
 
     byte[] downloadDocument(CognitoVO vo) throws IOException;
+
+	public Object submotmfs(CognitoVO vo);
+
+	public String getscCode();
 }

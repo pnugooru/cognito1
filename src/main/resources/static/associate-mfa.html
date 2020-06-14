@@ -82,37 +82,56 @@ body {
 <div class="row" style="margin-top:1%">
 <div class="col-3"></div>
 <div class="col-6">
-   <form action="/register" method="post">
+   <form action="" method="post">
         <h4 class="text-center">MFA Token [REPEAT EVERY 30 DAYS]</h4>       
         <div class="form-group">
 		 <label >Secret Code</label>
-            <input type="text"  name="tc_secret_code" class="form-control" placeholder="Secret Code" ng-model="secretCode" required="required"readonly>
+            <input type="text"  name="tc_secret_code" id="scCode" class="form-control" placeholder="Secret Code" ng-model="secretCode" required="required" >
+        <span style="color:red">{{secretError}}</span>
+        <div style="float:right;margin-top:1%;">
+        <button id="copyButton"  class=" btn-sm btn btn-primary" onclick="myFunction()">Copy Secret Code</button>
+        </div>
         </div>
 		
 		<div class="form-group">
-		 <label >Enter MFA  Token</label>
-            <input type="text" name="mfa_token"  minlength="10" class="form-control" placeholder="Enter MFA  Token" ng-model="mfaToken" required="required">
-            <span>{{refreshError}}</span>
-            <div style="float:right">
-<a href="#" ng-click="$event.preventDefault();refreshTokenF()">Submit to get Refresh Token</a>
-</div> 
-		</div>
-        <div class="form-group">
-		<label >Refresh Token</label>
-		<input type="text" name="tc_refresh_token" class="form-control" placeholder="Refresh Token" ng-model="refreshToken" required="required" readonly>
+		 <label >Enter MFA Token</label>
+            <input type="text" name="mfa_token"  id="mfaToken"  class="form-control" placeholder="Enter MFA  Token" ng-model="mfaToken" required="required">
            
-        </div>
+		</div>
+       
 		
-		  
+		 
         
-        <div class="form-group">
+        <div class="form-group" style="margin-top:2%">
             <button type="submit" ng-click="refreshTokenF()" style="float: right" class="btn btn-primary ">Submit</button>
 			<a href="/logout" style="float: left;margin-top:1%">Cancel</a>
-        </div>      
+        </div>    
+        
+         <div class="form-group"  id="finalref"   style="margin-top:12%;display:none">
+		<label >Refresh Token</label>
+		<input type="text" name="tc_refresh_token"  class="form-control" placeholder="Refresh Token"  id="retoken" ng-model="refreshToken"  readonly>
+             <div style="float:right;margin-top:1%;">
+        <button id="copyButton"  class=" btn-sm btn btn-primary" onclick="myFunction1()">Copy Refresh Token</button>
+        </div>
+        </div>  
     </form>
-	<div class="col-3"></div>
+	
 	</div>
+	
+	<div class="col-3">
+	
+	</div>
+	
+
+	
 </div>
+
+<div style="text-align: center;width:100%">
+
+	
+	<span style="color:green">{{message}}</span>
+	
+ </div>
     </div>
 </div>
 
@@ -128,36 +147,31 @@ function closeNav() {
   document.getElementById("main").style.marginLeft= "-16px";
   document.body.style.backgroundColor = "white";
 }
+
+
 </script>
    
 </body>
 <script>
+
     function choiceController($scope, $http){
-        console.log("choice");
-        $scope.secretCodeF = secretCodeF;
+    	$scope.secretError='';
         $scope.refreshTokenF = refreshTokenF;
-
-        function secretCodeF() {
-            $scope.secretCode = '';
-            $scope.refreshError='';
-            $scope.secretError='';
-            $scope.resp='';
-                var url = "/process-choice";
-                var objData = {
-                                id : 1,
-                                mfaToken : $scope.mfaToken
-                            };
-                $http.post(url, objData).success(function(response) {
-			        $scope.data = response;
-			        if($scope.data.secretCode == ''){
-			            $scope.secretError=$scope.data.message;
-			        } else {
-			            $scope.secretCode=$scope.data.secretCode;
-			            $scope.message="Request submitted successfully";
-			        }
-		        });
-        }
-
+        	$scope.secretError='';
+        	$scope.refreshToken='';
+        	
+        	var url = "/getscCode";
+        	 $http.post(url, null).success(function(response) {
+        	    if(response){
+        	    	 document.getElementById("scCode").value = response;
+        	    	
+        	    }else{
+        	    	 $scope.secretError="Perform Set up MFA process before generating Refresh Token";
+        	    }
+        	       
+             });
+       
+       
         function refreshTokenF() {
             $scope.refreshToken = '';
             $scope.refreshError='';
@@ -169,18 +183,52 @@ function closeNav() {
                                 mfaToken : $scope.mfaToken,
                                 secretCode : $scope.secretCode
                             };
-                $http.post(url, objData).success(function(response) {
-			        $scope.data = response;
-			        if($scope.data.refreshToken == ''){
-			            $scope.refreshError=$scope.data.message;
-			        } else {
-			            $scope.refreshToken=$scope.data.refreshToken;
-			            $scope.message="Request submitted successfully";
-			        }
-		        });
+                
+               var sc= document.getElementById("scCode").value;
+               var token= document.getElementById("mfaToken").value ;
+                if(sc && token){
+                	$http.post(url, objData).success(function(response) {
+    			        $scope.data = response;
+    			       
+    			        if($scope.data.refreshToken == null){
+    			        	
+    			            $scope.refreshError=$scope.data.message;
+    			        } else {
+    			        	
+    			            $scope.refreshToken=$scope.data.refreshToken;
+    			            $scope.message="Request submitted successfully";
+    			            document.getElementById("finalref").style.display = "block";
+    			            
+    			        }
+    		        });	
+                }
+                
         }
 
     }
 
+    
+    function myFunction() {
+  	  var copyText = document.getElementById("scCode").value;
+  	  
+  	  if(copyText){
+  		  copyText.select();
+  	  	  copyText.setSelectionRange(0, 99999)
+  	  	  document.execCommand("copy");
+  	  	  alert("Copied the text: " + copyText.value);
+  	  }
+  	
+  	}
+    
+    function myFunction1() {
+    	  var copyText = document.getElementById("retoken").value;
+    	  if(copyText){
+    		  copyText.select();
+    	  	  copyText.setSelectionRange(0, 99999)
+    	  	  document.execCommand("copy");
+    	  	  alert("Copied the text: " + copyText.value);
+    	  }
+    	
+    	}
 </script>
 </html> 

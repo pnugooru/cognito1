@@ -23,6 +23,18 @@ public class CognitoController {
     public Object processChoice(@RequestBody CognitoVO vo){
         return cognitoService.processChoice(vo);
     }
+    
+    
+    @PostMapping("/getscCode")
+    public String getscCode(){
+        return cognitoService.getscCode();
+    }
+    
+    
+    @PostMapping("/submitMfa")
+    public Object submotmfs(@RequestBody CognitoVO vo){
+        return cognitoService.submotmfs(vo);
+    }
 
     @PostMapping("/downloadDocument")
     public byte[] downloadDoc(@RequestBody CognitoVO vo) throws IOException {
