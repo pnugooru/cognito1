@@ -5,7 +5,7 @@ import io.cucumber.junit.Cucumber;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		glue = {"gov.irs.aoic.test.steps"},
+		glue = {"gov.irs.automationtest.fw","gov.irs.aoic.test.steps"},
 		features = {"src/test/resources/features"},
 		strict=true,
 		plugin = {"json:target/cucumber.json"},

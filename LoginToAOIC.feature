@@ -63,15 +63,19 @@ Feature: Sample Feature
   @GenerateRejectLetter @RunAll
   Scenario: GenerateRejectLetter
 	Given User2 logs into AOIC as a valid user
-    Then Main page is displayed and GenerateRejectLetter   
+    Then Main page is displayed and GenerateRejectLetter
     
- 
   @ReportsAndListings @RunAll
   Scenario: ReportsAndListings
 	Given User2 logs into AOIC as a valid user
     Then Main page is displayed and ReportsAndListings
-  
+    
+  @FormsAndLetters @RunAll
+  Scenario: FormsAndLetters
+	Given User2 logs into AOIC as a valid user
+    Then Main page is displayed and FormsAndLetters
+    
   @AddUpdateMFT @RunAll
   Scenario: AddUpdateMFT
 	Given User2 logs into AOIC as a valid user
-    Then Main page is displayed and AddUpdateMFT     
+    Then Main page is displayed and AddUpdateMFT  
